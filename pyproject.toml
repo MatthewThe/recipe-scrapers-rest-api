@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "recipe-scrapers-rest-api"
+version = "0.1.0"
+description = "REST API for recipe-scrapers Python package"
+authors = ["Matthew The <matthewthe@gmail.com>"]
+license = "Apache License 2.0"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Flask = "^2.1.2"
+recipe-scrapers = "^13.32.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
