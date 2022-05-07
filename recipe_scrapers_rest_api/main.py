@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
-from recipe_scrapers import scrape_me, WebsiteNotImplementedError
 
+import scraper
 
 app = Flask(__name__)
 
@@ -8,11 +8,10 @@ app = Flask(__name__)
 @app.route('/recipes/')
 def recipes():
     url = request.args.get('url', default = None, type = str)
-    
-    try:
-        scraper = scrape_me(url)
-        return jsonify({"title" : scraper.title(), "ingredients" : scraper.ingredients(), "servings" : scraper.yields().replace(" servings", "")})
-    except WebsiteNotImplementedError:
+    recipe = scraper.scrape_recipe_url(url)
+    if recipe:
+        return jsonify({"title" : recipe.title(), "ingredients" : recipe.ingredients(), "servings" : recipe.yields().replace(" servings", "")})
+    else:
         return {}
 
 
