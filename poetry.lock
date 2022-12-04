@@ -363,15 +363,16 @@ rdflib = ">=5.0.0"
 
 [[package]]
 name = "recipe-scrapers"
-version = "13.32.0"
+version = "14.24.0"
 description = "Python package, scraping recipes from all over the internet"
 category = "main"
 optional = false
 python-versions = ">=3.6"
 
 [package.dependencies]
-beautifulsoup4 = ">=4.6.0"
+beautifulsoup4 = ">=4.10.0"
 extruct = ">=0.8.0"
+isodate = ">=0.6.1"
 requests = ">=2.19.1"
 
 [[package]]
@@ -482,7 +483,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "0f967a2186e93223d5db6634953850577a42d73b6973420ffed953d32f743433"
+content-hash = "de501208157745140d720f208e4dc35b27e8e0cdd140da7b6dbd9dfe42eaacb0"
 
 [metadata.files]
 atomicwrites = [
@@ -696,10 +697,7 @@ rdflib-jsonld = [
     {file = "rdflib-jsonld-0.6.2.tar.gz", hash = "sha256:107cd3019d41354c31687e64af5e3fd3c3e3fa5052ce635f5ce595fd31853a63"},
     {file = "rdflib_jsonld-0.6.2-py2.py3-none-any.whl", hash = "sha256:011afe67672353ca9978ab9a4bee964dff91f14042f2d8a28c22a573779d2f8b"},
 ]
-recipe-scrapers = [
-    {file = "recipe_scrapers-13.32.0-py3-none-any.whl", hash = "sha256:9dc3668d09944d8c2eb26b35c39b8ab4db2c1deabe440f016ad232317e98718b"},
-    {file = "recipe_scrapers-13.32.0.tar.gz", hash = "sha256:36c44af9002a46c29cef5cc95edcca21fd3b6d7ab4a54c7f0e28159694010d47"},
-]
+recipe-scrapers = []
 requests = [
     {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
     {file = "requests-2.27.1.tar.gz", hash = "sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"},
