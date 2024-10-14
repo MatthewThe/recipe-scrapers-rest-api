@@ -1,13 +1,22 @@
-from recipe_scrapers import scrape_me, WebsiteNotImplementedError, NoSchemaFoundInWildMode
+from recipe_scrapers import (
+    scrape_html,
+    WebsiteNotImplementedError,
+    NoSchemaFoundInWildMode,
+)
 import requests
 
 
-def scrape_recipe_url(url):    
+def scrape_recipe_url(url):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+    }
     try:
-        scraper = scrape_me(url)
+        html = requests.get(url, headers=headers).content
+        scraper = scrape_html(html, org_url=url)
     except WebsiteNotImplementedError:
         try:
-            scraper = scrape_me(url, wild_mode=True)
+            html = requests.get(url, headers=headers).content
+            scraper = scrape_html(html, org_url=url, wild_mode=True)
         except NoSchemaFoundInWildMode:
             print("No schema found in wild mode")
             return None
@@ -17,6 +26,5 @@ def scrape_recipe_url(url):
     except requests.exceptions.MissingSchema:
         print("Missing schema")
         return None
-    
-    return scraper
 
+    return scraper

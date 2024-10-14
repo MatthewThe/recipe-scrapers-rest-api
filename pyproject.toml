@@ -6,13 +6,13 @@ authors = ["Matthew The <matthewthe@gmail.com>"]
 license = "Apache License 2.0"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = ">=3.8,<4.0"
 Flask = "^2.1.2"
-recipe-scrapers = "^14.0.0"
+recipe-scrapers = "^15.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.8.3"]
 build-backend = "poetry.core.masonry.api"

@@ -9,7 +9,7 @@ RUN apk add --no-cache libffi-dev build-base libxml2-dev libxslt-dev
 ENV HOME /root
 WORKDIR /root
 
-RUN pip install poetry==1.1.10
+RUN pip install poetry==1.8.3
 # poetry useses virtualenvs by default -> we want global installation
 RUN poetry config virtualenvs.create false
 ADD pyproject.toml /root/pyproject.toml
